@@ -1,6 +1,8 @@
 {
     "name": "the-world-engine-react",
-    "version": "0.0.2",
+    "version": "0.0.3",
+    "description": "the world engine react component",
+    "main": "dist/index.js",
     "peerDependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
