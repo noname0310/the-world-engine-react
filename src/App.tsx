@@ -33,6 +33,7 @@ function App(): JSX.Element {
             <Game
                 bootstrapper={Bootstrapper}
                 handleEvents={true}
+                autoResize={true}
             /> }
         </ContainerDiv>
     );

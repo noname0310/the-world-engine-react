@@ -34,6 +34,11 @@ function Game<B extends Bootstrapper, O extends InteropObject<B>>(props: GamePro
 
     useEffect((): (() => void)|void => {
         if (!gameContainer.current) return;
+        
+        if (game) {
+            game.dispose();
+            setGame(null);
+        }
 
         const newGame = new TGame(gameContainer.current, autoResize);
         setGame(newGame);
