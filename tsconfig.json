@@ -17,7 +17,7 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "noEmit": true,
+        //"noEmit": true,
         "noEmitOnError": true,
         "noImplicitAny": true,
         "noImplicitReturns": true,
@@ -25,7 +25,9 @@
         "noImplicitOverride": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "outDir": "dist/",
+        "declaration": true
     },
     "include": [
         "src"

@@ -1,3 +1,8 @@
+import Game from "./Game";
+
+export { Game };
+
+/*
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -12,3 +17,4 @@ root.render(
         <App />
     </React.StrictMode>
 );
+*/

@@ -1,21 +1,7 @@
 import { useCallback, useState } from "react";
-import styled from "styled-components";
 
 import { Bootstrapper } from "./asset/Bootstrapper";
 import Game from "./Game";
-
-const ContainerDiv = styled.div`
-    margin: 0;
-    width: 100%;
-    height: 100%;
-`;
-
-const MountButton = styled.button`
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-`;
 
 function App(): JSX.Element {
     const [gameMounted, setGameMounted] = useState(true);
@@ -25,17 +11,25 @@ function App(): JSX.Element {
     }, []);
     
     return (
-        <ContainerDiv>
-            <MountButton onClick={mountHandle}>
+        <div style={{ margin: 0, width: "100%", height: "100%" }}>
+            <button 
+                onClick={mountHandle}
+                style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    zIndex: 1
+                }}
+            >
                 {gameMounted ? "Unmount" : "Mount"}
-            </MountButton>
+            </button>
             { gameMounted &&
             <Game
                 bootstrapper={Bootstrapper}
                 handleEvents={true}
                 autoResize={true}
             /> }
-        </ContainerDiv>
+        </div>
     );
 }
 
