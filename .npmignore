@@ -1,0 +1,11 @@
+.git
+build
+node_modules
+public
+src
+.env.local
+.eslintrc.js
+.gitignore
+package-lock.json
+README.md
+tsconfig.json
