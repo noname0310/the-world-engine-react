@@ -26,6 +26,11 @@ interface GameProps<B extends Bootstrapper, O extends InteropObject<B>> {
     autoResize?: boolean;
 }
 
+/**
+ * A React component that renders a the-world-engine game.
+ * @param props
+ * @returns 
+ */
 function Game<B extends Bootstrapper, O extends InteropObject<B>>(props: GameProps<B, O>): JSX.Element {
     const { bootstrapper, interopObject, handleEvents, autoResize } = props;
 
