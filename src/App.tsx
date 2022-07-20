@@ -6,8 +6,8 @@ import Game from "./Game";
 
 const ContainerDiv = styled.div`
     margin: 0;
-    min-height: 100vh;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
 `;
 
 const MountButton = styled.button`

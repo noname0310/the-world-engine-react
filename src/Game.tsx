@@ -34,7 +34,7 @@ function Game<B extends Bootstrapper, O extends InteropObject<B>>(props: GamePro
 
     useEffect((): (() => void)|void => {
         if (!gameContainer.current) return;
-        
+
         if (game) {
             game.dispose();
             setGame(null);
@@ -61,7 +61,7 @@ function Game<B extends Bootstrapper, O extends InteropObject<B>>(props: GamePro
     return (
         <div
             ref={gameContainer}
-            style={{ margin: 0, height: "100%", width: "100%" }}
+            style={{ margin: 0,  width: "100%", height: "100%" }}
         />
     );
 }
