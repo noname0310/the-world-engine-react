@@ -1,40 +1,39 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import styled from "styled-components";
-import { Game } from "the-world-engine";
 
 import { Bootstrapper } from "./asset/Bootstrapper";
+import Game from "./Game";
 
 const ContainerDiv = styled.div`
     margin: 0;
     min-height: 100vh;
+    width: 100vw;
+`;
+
+const MountButton = styled.button`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 `;
 
 function App(): JSX.Element {
-    const [game, setGame] = useState<Game|null>(null);
-    const gameContainer = useRef<HTMLDivElement>(null);
+    const [gameMounted, setGameMounted] = useState(true);
 
-    useEffect((): (() => void)|void => {
-        if (!gameContainer.current) return;
-        if (game || false) return;
-
-        console.log("Initializing game...");
-
-        const newGame = new Game(gameContainer.current);
-        setGame(newGame);
-        newGame.run(Bootstrapper);
-        newGame.inputHandler.startHandleEvents();
-        
-        return (): void => {
-            console.log("Shutting down game...");
-
-            newGame.inputHandler.stopHandleEvents();
-            newGame.dispose();
-            setGame(null);
-        };
-    }, [gameContainer]);
-
+    const mountHandle = useCallback((): void => {
+        setGameMounted(value => !value);
+    }, []);
+    
     return (
-        <ContainerDiv ref={gameContainer}>
+        <ContainerDiv>
+            <MountButton onClick={mountHandle}>
+                {gameMounted ? "Unmount" : "Mount"}
+            </MountButton>
+            { gameMounted &&
+            <Game
+                bootstrapper={Bootstrapper}
+                handleEvents={true}
+            /> }
         </ContainerDiv>
     );
 }
