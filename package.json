@@ -30,7 +30,6 @@
     "bugs": {
         "url": "https://github.com/noname0310/the-world-engine-react/issues"
     },
-    "homepage": "https://github.com/noname0310/the-world-engine-react#readme",
     "eslintConfig": {
         "extends": [
             "react-app",
