@@ -6,7 +6,7 @@
     "peerDependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "the-world-engine": "^0.4.19"
+        "the-world-engine": "^0.4.20"
     },
     "scripts": {
         "start": "react-scripts start",
