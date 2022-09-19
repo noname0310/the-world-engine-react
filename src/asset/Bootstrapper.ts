@@ -12,6 +12,7 @@ import {
     GridCollideMap,
     GridObjectCollideMap,
     GridPointer,
+    MovementAnimationController,
     PlayerGridMovementController,
     PointerGridInputListener,
     PrefabRef,
@@ -21,9 +22,6 @@ import {
     TrackCameraController,
     ZaxisSorter
 } from "the-world-engine";
-import {
-    MovementAnimationController
-} from "the-world-engine/dist/engine/script/controller/MovementAnimationController";
 import { Vector2, Vector3 } from "three/src/Three";
 
 /** @internal */
